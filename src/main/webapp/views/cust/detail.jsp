@@ -56,8 +56,12 @@
                     <div class="form-group">
                         <label for="name">Name:</label>
                         <input type="text" value="${cust.custName}"  class="form-control" id="name" placeholder="Enter name" name="custName">
-
                     </div>
+                    <div class="form-group">
+                        <label for="kakao_id">Name:</label>
+                        <input type="text" value="${cust.kakao_id}"  class="form-control" id="kakao_id" placeholder="kakao_id" name="kakao_id">
+                    </div>
+
                     <button id="btn_update" type="button" class="btn btn-primary">Update</button>
                     <button id="btn_delete" type="button" class="btn btn-primary">Delete</button>
 

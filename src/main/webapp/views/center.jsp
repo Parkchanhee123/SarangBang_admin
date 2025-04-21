@@ -62,14 +62,15 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">누적 매출
                             </div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
-                                    <div id="msg1" class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                    <div id="msg1" class="h5 mb-0 mr-3 font-weight-bold text-gray-800">금액 변수로 들어갈 자리</div>
                                 </div>
                                 <div class="col">
-                                    <div class="progress progress-sm mr-2">
+
+                                   <div class="progress progress-sm mr-2">        <%--  progressbar 쓸거임? --%>
                                         <div id="progress1" class="progress-bar bg-info" role="progressbar"
                                              style="width: 50%" aria-valuenow="50" aria-valuemin="0"
                                              aria-valuemax="100"></div>
@@ -89,11 +90,11 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">월 매출
                             </div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
-                                    <div id="msg2" class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                    <div id="msg2" class="h5 mb-0 mr-3 font-weight-bold text-gray-800">변수 들어갈 자리</div>
                                 </div>
                                 <div class="col">
                                     <div class="progress progress-sm mr-2">
@@ -116,11 +117,11 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">일 매출
                             </div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
-                                    <div id="msg3" class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                    <div id="msg3" class="h5 mb-0 mr-3 font-weight-bold text-gray-800">변수 자리</div>
                                 </div>
                                 <div class="col">
                                     <div class="progress progress-sm mr-2">
@@ -143,11 +144,11 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">사용자 수
                             </div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
-                                    <div id="msg4" class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                    <div id="msg4" class="h5 mb-0 mr-3 font-weight-bold text-gray-800">변수 자리</div>
                                 </div>
                                 <div class="col">
                                     <div class="progress progress-sm mr-2">
@@ -246,6 +247,19 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-6" style="background-color: black">
+                <p style="color: white"> 여기는 뭐넣지 d</p>
+        </div>
+
+        <div class="col-xl-6" style="background-color: black; margin-left: 50px">
+            <p> 대충 인기상품 들어갈 자리</p>
+                <img src="">
+                <p> 대충 곰돌이 이미지</p>
+            <p>곰돌이 이름</p>
         </div>
     </div>
 

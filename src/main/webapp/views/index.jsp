@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>사랑방 - 관리자</title>
 
     <!-- Custom fonts for this template-->
     <link href="<c:url value="/vendor/fontawesome-free/css/all.min.css"/>" rel="stylesheet" type="text/css">
@@ -79,10 +79,10 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<c:url value="/"/> ">
-                <div class="sidebar-brand-icon rotate-n-15">
+                <div class="sidebar-brand-icon rotate-n-15">        <%-- 여기는 아이콘으로 들어가있는데 이미지로 바꾸죠 --%>
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">사랑방</div>
             </a>
 
             <!-- Divider -->
@@ -92,21 +92,19 @@
             <li class="nav-item active">
                 <a class="nav-link" href="<c:url value="/" />">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>메인 페이지</span></a>
             </li>
-            <c:if test="${sessionScope.admin != null}">
                 <!-- Web Socket -->
                 <li class="nav-item active">
-                    <a class="nav-link" href="<c:url value="/websocket" />">
+                    <a class="nav-link" href="<c:url value="/websocket" />">    <%-- 라우트 나주엥 수정할거 --%>
                         <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Web Socket</span></a>
+                        <span>사용자 관리</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="<c:url value="/chat" />">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>chat</span></a>
+                        <span>문의사항 관리</span></a>
                 </li>
-            </c:if>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -121,7 +119,7 @@
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                        aria-expanded="true" aria-controls="collapseTwo">
                         <i class="fas fa-fw fa-cog"></i>
-                        <span>Cust</span>
+                        <span>매출관리</span>
                     </a>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
@@ -139,7 +137,7 @@
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                        aria-expanded="true" aria-controls="collapseUtilities">
                         <i class="fas fa-fw fa-wrench"></i>
-                        <span>Item</span>
+                        <span>통계/분석</span>
                     </a>
                     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                          data-parent="#accordionSidebar">
@@ -229,7 +227,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">3+</span>
+                                <span class="badge badge-danger badge-counter">3</span>
                             </a>
                             <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -344,20 +342,22 @@
                                 <a href="#" data-toggle="modal" data-target="#loginModal">login</a>
                             </c:when>
                             <c:otherwise>
+
+
                                 <li class="nav-item dropdown no-arrow">
                                     <a class="nav-link dropdown-toggle" href="#" role="button"
                                         aria-haspopup="true" aria-expanded="false">
                                         <span class="mr-2 d-none d-lg-inline text-gray-600 small">${sessionScope.admin.id}</span>
                                         <img class="img-profile rounded-circle"
                                              src="<c:url value="/img/undraw_profile.svg"/>">
-
-
                                     </a>
                                     <!-- Dropdown - User Information -->
                                 </li>
-                                <li class="nav-item dropdown no-arrow">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">${sessionScope.admin.role.roleName}</span>
-                                </li>
+
+<%--                                <li class="nav-item dropdown no-arrow">--%>
+<%--                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">${sessionScope.admin.role.roleName}</span>--%>
+<%--                                </li>--%>
+
                                 <li class="nav-item dropdown no-arrow">
                                     <a href="<c:url value="/logout"/>" role="button"
                                        aria-haspopup="true" aria-expanded="false">LOGOUT</a>

@@ -66,9 +66,9 @@ public class MainController {
         } catch (Exception e) {
             return "index";
         }
-
         return "redirect:/";
     }
+
 
     @RequestMapping("/webrtc")
     public String rtc(Model  model) {

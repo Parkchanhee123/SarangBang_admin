@@ -13,4 +13,5 @@ public class CustDto {
     private String custId;
     private String custPwd;
     private String custName;
+    private String kakao_id;
 }
