@@ -251,17 +251,23 @@
     </div>
 
     <div class="row">
-        <div class="col-xl-6" style="background-color: black">
-                <p style="color: white"> 여기는 뭐넣지 d</p>
+        <!-- 좌측 영역 -->
+        <div class="col-xl-5 bg-dark text-white p-4">
+            <p>여기는 뭐넣지 d</p>
         </div>
 
-        <div class="col-xl-6" style="background-color: black; margin-left: 50px">
-            <p> 대충 인기상품 들어갈 자리</p>
-                <img src="">
-                <p> 대충 곰돌이 이미지</p>
+        <div class="col-xl-2">
+
+        </div>
+
+        <!-- 우측 영역 -->
+        <div class="col-xl-5 bg-dark text-white p-4">
+            <p>대충 인기상품 들어갈 자리</p>
+            <img src="" alt="곰돌이 이미지" class="img-fluid mb-2">
             <p>곰돌이 이름</p>
         </div>
     </div>
+
 
 
 
