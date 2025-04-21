@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.sm.app.repository.ItemRepository">     <!-- 이 xml을 누가 사용하냐 (CustRepository)-->
+
+    <select id="selectOne" parameterType="Integer" resultType="itemDto">
+        SELECT * FROM item WHERE item_id=#{itemId}
+    </select>
+
+    <select id="select" resultType="itemDto">
+        SELECT * FROM item
+    </select>
+
+    <insert id="insert" parameterType="itemDto">
+        INSERT INTO item VALUES (0,#{itemName},#{itemPrice},#{imgName},now(), now())
+    </insert>
+
+    <update id="update" parameterType="itemDto">
+        UPDATE item SET item_name=#{itemName},
+                        item_price=#{itemPrice},
+                        img_name=#{imgName},
+                        updatedDate= now() WHERE item_id=#{itemId}
+    </update>
+
+    <delete id="delete" parameterType="Integer">
+        DELETE FROM item WHERE item_id=#{id}
+    </delete>
+
+    <select id="findByName"  resultType="itemDto"  parameterType="String">
+        select * from item where name like concat('%',#{itemName},'%')
+    </select>
+
+
+</mapper>

@@ -1,0 +1,58 @@
+# tomcat server setting
+server:
+  port: 81
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+
+# Spring boot environment settings
+spring:
+  mvc:
+    view:
+      prefix: /views/
+      suffix: .jsp
+
+  datasource:
+    # SQL 로그를 찍기위해 위에것을 사용 실 서비스 시에는 아래 드라이버 사용
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:mysql://127.0.0.1:3306/immersive?characterEncoding=utf8
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/immersive?characterEncoding=utf8
+    username: ENC(HGcxJ4jEdnmnt7yIAEqk3w==)
+    password: ENC(g98jm4WF7HDEEyYUit+GEg==)
+
+# Mybatis settings
+mybatis:
+  type-aliases-package: edu.sm.app.dto     # 이 경로 아래에있는 클래스들을 데이터베이스의 테이블들과의 1대1 매핑으로 사용하겠다
+  mapper-locations: classpath:/mapper/*.xml
+  # constructor 사용하기 위해 추가
+  configuration:
+      map-underscore-to-camel-case: true
+  # classpath = resources 를 의미함
+  # resources 아래 mapper 아래 xml로 sql문을 작성할거임
+
+
+# log settings
+logging:
+  level:
+    root: info
+#    debug > info > error (정보 출력량) 중 선택하여 개발, 서비스에 맞춰 변경
+
+# 위까지는 spring꺼 아래부터는 팀, 개인의 변수들
+app:
+  url:
+    server-url: http://10.20.34.233:81
+#    server-url: http://210.110.34.211:81
+    # 내 ip (와이파이 환경이라 껐다 켤때마다 달라짐)
+  dir:
+    imgdir: file:///c:/springsm/imgs/    # 위치가 springsm 하위가 아니어도 상관없음
+    uploaddir: c:/springsm/imgs/         # 파일을 저장할때는 아펭 file:/// 빠짐
+    logdir: file:///c:/springsm/logs/
+    readlogdir: c:/springsm/logs/
+
+  key:
+    algo: PBEWithMD5AndDES    # ENC변경 필 (보안사유)
+    skey: mykey
+    papago-id: v7k1xoe7w2    # id값
+    papago-secret: SQduWXaGdVRX3w7xiC2rK2l4GDL3Q0zsdXegXgy2    # 토킅값
