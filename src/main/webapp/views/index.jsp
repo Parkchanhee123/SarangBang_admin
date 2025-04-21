@@ -96,7 +96,7 @@
             </li>
                 <!-- Web Socket -->
                 <li class="nav-item active">
-                    <a class="nav-link" href="<c:url value="/websocket" />">    <%-- 라우트 나주엥 수정할거 --%>
+                    <a class="nav-link" href="<c:url value="/cust/get" />">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>사용자 관리</span></a>
                 </li>

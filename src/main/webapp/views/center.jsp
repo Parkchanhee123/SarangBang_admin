@@ -253,7 +253,7 @@
     <div class="row">
         <!-- 좌측 영역 -->
         <div class="col-xl-5 bg-dark text-white p-4">
-            <p>여기는 뭐넣지 d</p>
+            <p>매출 그래프 들어갈 자리</p>
         </div>
 
         <div class="col-xl-2">
