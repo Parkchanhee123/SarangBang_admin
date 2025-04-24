@@ -80,7 +80,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<c:url value="/"/> ">
                 <div class="sidebar-brand-icon rotate-n-15">        <%-- 여기는 아이콘으로 들어가있는데 이미지로 바꾸죠 --%>
-                    <i class="fas fa-laugh-wink"></i>
+                    <img class="rounded-circle" style="width: 50px; height: 50px" src="<c:url value="/img/SarangBang_logo.png"/>">
                 </div>
                 <div class="sidebar-brand-text mx-3">사랑방</div>
             </a>
@@ -101,7 +101,7 @@
                         <span>사용자 관리</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="<c:url value="/chat" />">
+                    <a class="nav-link" href="<c:url value="/question" />">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>문의사항 관리</span></a>
                 </li>
@@ -113,7 +113,6 @@
             <div class="sidebar-heading">
                 Interface
             </div>
-            <c:if test="${sessionScope.admin.role.roleId == 1 || sessionScope.admin.role.roleId == 2}">
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
@@ -148,7 +147,6 @@
                         </div>
                     </div>
                 </li>
-            </c:if>
 
 
             <!-- Divider -->
@@ -337,17 +335,9 @@
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
-                        <c:choose>
-                            <c:when test="${sessionScope.admin == null}">
-                                <a href="#" data-toggle="modal" data-target="#loginModal">login</a>
-                            </c:when>
-                            <c:otherwise>
-
-
                                 <li class="nav-item dropdown no-arrow">
                                     <a class="nav-link dropdown-toggle" href="#" role="button"
                                         aria-haspopup="true" aria-expanded="false">
-                                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">${sessionScope.admin.id}</span>
                                         <img class="img-profile rounded-circle"
                                              src="<c:url value="/img/undraw_profile.svg"/>">
                                     </a>
@@ -358,12 +348,7 @@
 <%--                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">${sessionScope.admin.role.roleName}</span>--%>
 <%--                                </li>--%>
 
-                                <li class="nav-item dropdown no-arrow">
-                                    <a href="<c:url value="/logout"/>" role="button"
-                                       aria-haspopup="true" aria-expanded="false">LOGOUT</a>
-                                </li>
-                            </c:otherwise>
-                        </c:choose>
+
                         <!-- Nav Item - User Information -->
 
 
