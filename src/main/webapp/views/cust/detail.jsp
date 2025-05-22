@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script>
@@ -8,10 +7,10 @@
                 this.send();
             });
             $('#detail_form > #btn_delete').click(()=>{
-                let c = confirm('You want to really delete?');
-                if(c == true){
+                let c = confirm('삭제하시겠습니까?');
+                if(c === true){
                     let id = $('#id').val();
-                    location.href = '<c:url value="/cust/delete"/>?=id'+id;
+                    location.href = '<c:url value="/cust/delete"/>?id=' + id;
                 }
             });
         },
@@ -28,48 +27,42 @@
     });
 </script>
 
-
-
 <div class="container-fluid">
 
-    <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+    <h1 class="h3 mb-2 text-gray-800">사용자 상세정보</h1>
 
-    <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+            <h6 class="m-0 font-weight-bold text-primary">User Detail</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <form id="detail_form">
                     <div class="form-group">
-                        <label for="id">ID:</label>
-                        <input type="text"  readonly="readonly" value="${cust.custId}" class="form-control" id="id" placeholder="Enter id" name="custId">
+                        <label for="id">MongoDB ID (_id):</label>
+                        <input type="text" readonly="readonly" value="${cust.id}" class="form-control" id="id" name="id">
+                    </div>
 
-                    </div>
                     <div class="form-group">
-                        <label for="pwd">Password:</label>
-                        <input type="password"  value="${cust.custPwd}"  class="form-control" id="pwd" placeholder="Enter password" name="custPwd">
+                        <label for="user_uuid">User UUID:</label>
+                        <input type="text" value="${cust.user_uuid}" class="form-control" id="user_uuid" name="user_uuid">
+                    </div>
 
-                    </div>
                     <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" value="${cust.custName}"  class="form-control" id="name" placeholder="Enter name" name="custName">
+                        <label for="user_family_email">Family Email:</label>
+                        <input type="email" value="${cust.user_family_email}" class="form-control" id="user_family_email" name="user_family_email">
                     </div>
+
                     <div class="form-group">
-                        <label for="kakao_id">Name:</label>
-                        <input type="text" value="${cust.kakao_id}"  class="form-control" id="kakao_id" placeholder="kakao_id" name="kakao_id">
+                        <label for="user_date">가입일자:</label>
+                        <input type="text" value="${cust.user_date}" class="form-control" id="user_date" name="user_date">
                     </div>
 
                     <button id="btn_update" type="button" class="btn btn-primary">Update</button>
-                    <button id="btn_delete" type="button" class="btn btn-primary">Delete</button>
-
+                    <button id="btn_delete" type="button" class="btn btn-danger">Delete</button>
                 </form>
             </div>
         </div>
     </div>
 
 </div>
-
-

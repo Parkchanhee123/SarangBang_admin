@@ -201,7 +201,7 @@
                 <!-- Card Body -->
                 <div class="card-body">
                     <div id="live_chart">
-
+                        <img src="<c:url value="/img/gara_graph.png"/>" alt="그래프" class="img-fluid mb-2">
                     </div>
                 </div>
             </div>
@@ -253,7 +253,7 @@
     <div class="row">
         <!-- 좌측 영역 -->
         <div class="col-xl-5 bg-dark text-white p-4">
-            <p>매출 그래프 들어갈 자리</p>
+            <p>그래프 들어갈 자리</p>
         </div>
 
         <div class="col-xl-2">
@@ -262,7 +262,7 @@
 
         <!-- 우측 영역 -->
         <div class="col-xl-5 bg-dark text-white p-4">
-            <p>대충 인기상품 들어갈 자리</p>
+            <p>인기상품 들어갈 자리</p>
             <img src="" alt="곰돌이 이미지" class="img-fluid mb-2">
             <p>곰돌이 이름</p>
         </div>

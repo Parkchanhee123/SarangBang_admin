@@ -1,60 +1,58 @@
 package edu.sm.app.service;
 
-import com.github.pagehelper.Page;
-import com.github.pagehelper.PageHelper;
 import edu.sm.app.dto.CustDto;
-import edu.sm.app.dto.Search;
-import edu.sm.app.frame.SmService;
 import edu.sm.app.repository.CustRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class CustService implements SmService<String, CustDto> {
+public class CustService {
 
     final CustRepository custRepository;
 
-    @Override
-    public void add(CustDto custDto) throws Exception {
-        custRepository.insert(custDto);
+    public CustDto add(CustDto custDto) {
+        return custRepository.save(custDto);
     }
 
-    @Override
-    public void modify(CustDto custDto) throws Exception {
-        custRepository.update(custDto);
+    public CustDto modify(CustDto custDto) {
+        return custRepository.save(custDto); // save()는 존재하면 update로 작동
     }
 
-    @Override
-    public void delete(String s) throws Exception {
-        custRepository.delete(s);
+    public void delete(String id) {
+        custRepository.deleteById(id);
     }
 
-    @Override
-    public CustDto get(String s) throws Exception {
-        return custRepository.selectOne(s);
+    public CustDto get(String id) {
+        Optional<CustDto> result = custRepository.findById(id);
+        return result.orElse(null);
     }
 
-    @Override
-    public List<CustDto> get() throws Exception {
-        return custRepository.select();
+    public List<CustDto> getAll() {
+        List<CustDto> list = custRepository.findAll();
+        System.out.println("========== [MongoDB 조회 결과] ==========");
+        System.out.println("총 사용자 수: " + list.size());
+        for (CustDto dto : list) {
+            System.out.println(dto.toString());
+        }
+        System.out.println("=========================================");
+        return list;
     }
 
-    public List<CustDto> findByName(String name) throws Exception {
-        return custRepository.findByName(name);
+
+    public List<CustDto> findByUserFamilyEmail(String email) {
+        return custRepository.findByUserFamilyEmail(email);
     }
 
-    // pagehelper
-    public Page<CustDto> getPage(int pageNo) throws Exception {
-        PageHelper.startPage(pageNo, 5); // 3: 한화면에 출력되는 개수
-        return custRepository.getpage();    // custdto를 page에 담아오는거
+    public Page<CustDto> getPage(int pageNo, int size) {
+        Pageable pageable = PageRequest.of(pageNo, size);
+        return custRepository.findAll(pageable);
     }
 
-    // pagehelper
-    public Page<CustDto> getFindPage(int pageNo, Search search) throws Exception {
-        PageHelper.startPage(pageNo, 3); // 3: 한화면에 출력되는 개수
-        return custRepository.getfindpage(search);
-    }
 }
